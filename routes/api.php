@@ -13,8 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
+//wechat
 Route::any('wechat', 'WechatController@serve');
 Route::any('test', 'WechatController@test');
+
+//api
+$api = app('Dingo\Api\Routing\Router');
+
+//v1
+$api->version('v1', function ($api) {
+    $api->group([
+        'namespace'  => 'App\Http\Controllers\v1\Auth',
+    ], function ($router) {
+        $router->post('user_login', 'AuthenticateController@login');
+        $router->post('register', 'AuthenticateController@postRegister');
+        $router->post('refresh_token', 'AuthenticateController@refreshToken');
+    });
+});
 
 Route::group([
     'namespace' => 'Api'
@@ -37,7 +52,7 @@ Route::group([
     });
 });
 
-
+//admin
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin'

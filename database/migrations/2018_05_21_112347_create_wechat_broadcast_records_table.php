@@ -31,6 +31,6 @@ class CreateWechatBroadcastRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('broadcast_records');
+        Schema::dropIfExists('wechat_broadcast_records');
     }
 }

@@ -16,7 +16,8 @@
         "overtrue/laravel-wechat": "~4.0",
         "predis/predis": "^1.1",
         "tymon/jwt-auth": "1.0.0-rc.1",
-        "dingo/api": "^2"
+        "dingo/api": "^2",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
