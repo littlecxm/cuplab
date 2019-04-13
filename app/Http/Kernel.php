@@ -61,5 +61,9 @@ class Kernel extends HttpKernel
         'jwt-auth' => \App\Http\Middleware\JWTAuth::class,
         'jwt-admin-auth' => \App\Http\Middleware\JWTAdminAuth::class,
         'wechat.config' => \App\Http\Middleware\WechatConfig::class,
+
+        'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
+        'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
+        'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
     ];
 }
